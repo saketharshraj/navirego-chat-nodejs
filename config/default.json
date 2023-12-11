@@ -1,0 +1,30 @@
+{
+    "host": "localhost",
+    "port": 5001,
+    "public": "../public/",
+    "paginate": {
+        "default": 30,
+        "max": 200
+    },
+    "authentication": {
+        "entity": "user",
+        "service": "v1/user",
+        "secret": "change _secret_on_production",
+        "authStrategies": ["jwt", "local"],
+        "jwtOptions": {
+            "header": {
+                "typ": "access"
+            },
+            "audience": "https://navirego-domain.com",
+            "issuer": "navirego",
+            "algorithm": "HS256",
+            "expiresIn": "30d"
+        },
+        "local": {
+            "usernameField": "email",
+            "passwordField": "password"
+        }
+    },
+    "mongodb": "mongodb://localhost:27017/navirego-chat",
+    "formifyUrl": "http://127.0.0.1:8000"
+}
