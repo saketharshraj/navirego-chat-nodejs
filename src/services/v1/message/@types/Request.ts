@@ -5,6 +5,7 @@ interface MessageRequest {
   messageType: string;
   fileUrl?: string;
   chatId?: Types.ObjectId;
+  createdBy?: Types.ObjectId;
 }
 
 export { MessageRequest }

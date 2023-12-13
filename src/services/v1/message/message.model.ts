@@ -29,6 +29,7 @@ export default function (app: Application): Model<any> {
             },
             chatId: {
                 type: ObjectId,
+                required: true,
                 ref: 'chat',
             },
             createdBy: {

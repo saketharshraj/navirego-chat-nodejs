@@ -2,6 +2,11 @@ import { HooksObject } from '@feathersjs/feathers';
 import * as authentication from '@feathersjs/authentication';
 import SetCreatedBy from '../../../hooks/SetCreatedBy';
 import CheckAndCreateChat from './hooks/CheckAndCreateChat';
+import IncludeMessagesCount from './hooks/IncludeMessagesCount';
+import SetDefaultItem from '../../../hooks/SetDefaultItem';
+import { ACTIVE } from '../../../constants/Status';
+import CreateBotMessage from './hooks/CreateBotMessage';
+import IncludeBotResponse from './hooks/IncludeBotResponse';
 // Don't remove this comment. It's needed to format import lines nicely.
 
 const { authenticate } = authentication.hooks;
@@ -11,7 +16,7 @@ export default {
     all: [ authenticate('jwt') ],
     find: [],
     get: [],
-    create: [SetCreatedBy(), CheckAndCreateChat()],
+    create: [SetDefaultItem('status', ACTIVE), SetCreatedBy(), CheckAndCreateChat(), CreateBotMessage()],
     update: [],
     patch: [],
     remove: []
@@ -21,7 +26,7 @@ export default {
     all: [],
     find: [],
     get: [],
-    create: [],
+    create: [IncludeMessagesCount(), IncludeBotResponse()],
     update: [],
     patch: [],
     remove: []
