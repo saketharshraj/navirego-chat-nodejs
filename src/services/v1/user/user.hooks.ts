@@ -21,7 +21,7 @@ export default {
     before: {
         all: [],
         find: [],
-        get: [iff(hasAccessToken(), authenticate('jwt'), GetUserInfo()).else(disallow())],
+        get: [iff(hasAccessToken(), authenticate('jwt'), GetUserInfo())],
         create: [
             FRequired(['name', 'email', 'password']),
             CheckEmailOrPhone(),

@@ -18,7 +18,7 @@ export default function (app: Application): Model<any> {
                 type: String,
                 required: true,
             },
-            mesageType: {
+            messageType: {
                 type: Number,
                 required: true,
                 enum: [TEXT, BLOB],

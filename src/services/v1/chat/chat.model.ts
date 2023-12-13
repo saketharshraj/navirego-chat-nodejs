@@ -17,7 +17,7 @@ export default function (app: Application): Model<any> {
                 type: String,
                 required: true,
             },
-            chatCount: {
+            messagesCount: {
                 type: Number,
                 required: true,
                 default: 0,

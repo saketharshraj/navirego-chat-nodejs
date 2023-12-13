@@ -4,6 +4,7 @@ import { Application } from '../../../declarations';
 import { Message } from './message.class';
 import createModel from './message.model';
 import hooks from './message.hooks';
+import UpdateMessageCountInChat from './events/UpdateMessageCountInChat';
 
 // Add this service to the service type index
 declare module '../../../declarations' {
@@ -23,6 +24,7 @@ export default function (app: Application): void {
 
   // Get our initialized service so that we can register hooks
   const service = app.service('v1/message');
+  service.on('created', UpdateMessageCountInChat);
 
   service.hooks(hooks);
 }
