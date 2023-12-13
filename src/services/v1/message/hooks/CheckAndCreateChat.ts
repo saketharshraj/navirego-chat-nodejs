@@ -16,11 +16,9 @@ const CheckAndCreateChat = () => async (context: HookContext) => {
         const title = message.substring(0, 15);
 
         // Create a new chat
-        console.log(title)
         const chat = await app.service('v1/chat').create({
             title: title,
         });
-        console.log(chat)
         context.data.chatId = chat._id;
     }
 };
