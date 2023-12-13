@@ -5,9 +5,8 @@ const UpdateMessageCountInChat = async (
     result: Message,
     context: HookContext,
 ) => {
-    console.log('hello');
     const { app } = context;
-    const { message, chatId } = result;
+    const { chatId } = result;
     const messageService = app.service('v1/message');
     const messagesCount = await messageService
         .find({
