@@ -18,7 +18,7 @@ import channels from './channels';
 import { HookContext as FeathersHookContext } from '@feathersjs/feathers';
 import authentication from './authentication';
 import mongoose from './mongoose';
-import { awsConfig } from './configs/aws';
+import aws from './aws'
 
 // Don't remove this comment. It's needed to format import lines nicely.
 
@@ -35,7 +35,6 @@ app.use(
         contentSecurityPolicy: false,
     }),
 );
-console.log(awsConfig)
 app.use(cors());
 app.use(compress());
 app.use(express.json());
@@ -57,6 +56,9 @@ app.configure(authentication);
 app.configure(services);
 // Set up event channels (see channels.ts)
 app.configure(channels);
+
+// AWS
+app.configure(aws);
 
 // Configure a middleware for 404s and the error handler
 app.use(express.notFound());
