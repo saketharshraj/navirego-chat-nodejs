@@ -48,6 +48,7 @@
         "@feathersjs/transport-commons": "^4.5.12",
         "aws-sdk": "^2.1517.0",
         "cors": "^2.8.5",
+        "dotenv": "^16.3.1",
         "feathers-hooks-common": "^5.0.6",
         "feathers-mongoose": "^8.5.1",
         "helmet": "^4.6.0",

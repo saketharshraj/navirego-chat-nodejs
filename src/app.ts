@@ -18,6 +18,7 @@ import channels from './channels';
 import { HookContext as FeathersHookContext } from '@feathersjs/feathers';
 import authentication from './authentication';
 import mongoose from './mongoose';
+import { awsConfig } from './configs/aws';
 
 // Don't remove this comment. It's needed to format import lines nicely.
 
@@ -34,6 +35,7 @@ app.use(
         contentSecurityPolicy: false,
     }),
 );
+console.log(awsConfig)
 app.use(cors());
 app.use(compress());
 app.use(express.json());
