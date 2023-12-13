@@ -26,6 +26,7 @@ export default {
             FRequired(['name', 'email', 'password']),
             CheckEmailOrPhone(),
             SetDefaultItem('status', ACTIVE),
+            SetDefaultItem('role', USER),
             hashPassword('password'),
         ],
         update: [disallow()],

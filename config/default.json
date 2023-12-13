@@ -25,6 +25,5 @@
             "passwordField": "password"
         }
     },
-    "mongodb": "mongodb://localhost:27017/navirego-chat",
-    "formifyUrl": "http://127.0.0.1:8000"
+    "mongodb": "mongodb://127.0.0.1:27017/navirego_chat"
 }
