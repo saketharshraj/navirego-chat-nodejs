@@ -2,7 +2,7 @@
 //
 // See http://mongoosejs.com/docs/models.html
 // for more of what you can do here.
-import { BLOB, TEXT } from '../../../constants/Message';
+import { BLOB, TEXT, TEXTBLOB } from '../../../constants/Message';
 import { ACTIVE, DELETED } from '../../../constants/Status';
 import { Application } from '../../../declarations';
 import { Model, Mongoose } from 'mongoose';
@@ -16,12 +16,11 @@ export default function (app: Application): Model<any> {
         {
             message: {
                 type: String,
-                required: true,
             },
             messageType: {
                 type: Number,
                 required: true,
-                enum: [TEXT, BLOB],
+                enum: [TEXT, BLOB, TEXTBLOB],
             },
             fileUrl: {
                 type: String,
