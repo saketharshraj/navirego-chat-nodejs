@@ -25,7 +25,7 @@
         "lint": "eslint src/. test/. --config .eslintrc.json --ext .ts --fix",
         "local": "ts-node-dev --no-notify src/",
         "dev": "yarn run compile && node lib/",
-        "prod": "NODE_ENV=production && tsc  && node lib/",
+        "prod": "NODE_ENV=production node lib/",
         "jest": "jest --forceExit",
         "compile": "shx rm -rf lib/ && tsc"
     },
@@ -46,7 +46,7 @@
         "@feathersjs/feathers": "^4.5.15",
         "@feathersjs/socketio": "^4.5.15",
         "@feathersjs/transport-commons": "^4.5.12",
-        "aws-sdk": "^2.1517.0",
+        "aws-sdk": "^2.1519.0",
         "cors": "^2.8.5",
         "dotenv": "^16.3.1",
         "feathers-hooks-common": "^5.0.6",
