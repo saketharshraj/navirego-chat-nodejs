@@ -7,6 +7,7 @@ import SetDefaultItem from '../../../hooks/SetDefaultItem';
 import { ACTIVE } from '../../../constants/Status';
 import CreateBotMessage from './hooks/CreateBotMessage';
 import IncludeBotResponse from './hooks/IncludeBotResponse';
+import SetCreatedByQuery from '../../../hooks/SetCreatedByQuery';
 // Don't remove this comment. It's needed to format import lines nicely.
 
 const { authenticate } = authentication.hooks;
@@ -14,7 +15,7 @@ const { authenticate } = authentication.hooks;
 export default {
   before: {
     all: [ authenticate('jwt') ],
-    find: [],
+    find: [SetCreatedByQuery()],
     get: [],
     create: [SetDefaultItem('status', ACTIVE), SetCreatedBy(), CheckAndCreateChat(), CreateBotMessage()],
     update: [],
