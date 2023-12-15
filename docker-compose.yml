@@ -8,11 +8,3 @@ services:
       - .:/usr/src/app
     ports:
       - 5001:5001
-    depends_on:
-      - mongo
-
-  
-  mongo:
-    image: mongo
-    ports:
-      - 27017:27017

@@ -8,6 +8,7 @@ import { botConfig } from '../../../../configs/bot';
 const IncludeMessagesCount = () => async (context: HookContext) => {
     const { result, app } = context;
     const chatId = result.chatId;
+    
     const messagesCount = await app
         .service('v1/message')
         .find({
