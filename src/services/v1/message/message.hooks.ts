@@ -17,7 +17,7 @@ export default {
     all: [ authenticate('jwt') ],
     find: [],
     get: [],
-    create: [SetDefaultItem('status', ACTIVE), SetCreatedBy(), CheckAndCreateChat(), CreateBotMessage()],
+    create: [SetDefaultItem('status', ACTIVE), SetCreatedBy(), CheckAndCreateChat()],
     update: [],
     patch: [],
     remove: []
@@ -27,7 +27,7 @@ export default {
     all: [],
     find: [],
     get: [],
-    create: [IncludeMessagesCount(), IncludeBotResponse()],
+    create: [CreateBotMessage(), IncludeMessagesCount(), IncludeBotResponse()],
     update: [],
     patch: [],
     remove: []
