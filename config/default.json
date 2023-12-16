@@ -25,6 +25,5 @@
             "passwordField": "password"
         }
     },
-    "mongodb": "mongodb://127.0.0.1:27017/navirego_chat",
     "aws-bucket": "navirego-chat-app-bucket"
 }
