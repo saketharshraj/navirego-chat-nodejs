@@ -15,7 +15,7 @@ const { authenticate } = authentication.hooks;
 export default {
   before: {
     all: [ authenticate('jwt') ],
-    find: [SetCreatedByQuery()],
+    find: [],
     get: [],
     create: [SetDefaultItem('status', ACTIVE), SetCreatedBy(), CheckAndCreateChat(), CreateBotMessage()],
     update: [],
